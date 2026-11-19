@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: urbanfix-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URL
+        sync: false
+      - key: XAI_API_KEY
+        sync: false
+      - key: GROK_VISION_MODEL
+        value: grok-4.7
+      - key: GROK_VISION_FALLBACK_MODEL
+        value: grok-4.3
+      - key: GROK_TEXT_MODEL
+        value: grok-4.7
+      - key: AI_MIN_CONFIDENCE
+        value: "0.6"
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: GEOCODER_BASE_URL
+        value: https://nominatim.openstreetmap.org
+      - key: GEOCODER_USER_Agent
+        value: UrbanFix-Platform/1.0 (urbanfix@civictech.local)
+      - key: DUPLICATE_RADIUS_METERS
+        value: "40"
+      - key: AUTO_CLOSE_DAYS
+        value: "3"
+    healthCheckPath: /health

@@ -1,0 +1,17 @@
+{
+  "name": "urbanfix-monorepo",
+  "version": "1.0.0",
+  "description": "Citizen Collaboration Platform for Urban Mobility Problems (UrbanFix)",
+  "scripts": {
+    "dev": "node dev.js",
+    "dev:all": "node dev.js",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "seed": "npm run seed --prefix server",
+    "smoke": "npm run smoke --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": ["urbanfix", "civic-tech", "urban-mobility"],
+  "author": "UrbanFix Team",
+  "license": "MIT"
+}
